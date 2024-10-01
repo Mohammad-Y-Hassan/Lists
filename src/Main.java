@@ -78,6 +78,23 @@ public class Main {
 
         list3.addBefore(employee5, employee2);
         list3.printList();
+
+        Integer one = 1;
+        Integer two = 2;
+        Integer three = 3;
+        Integer four = 4;
+
+        IntegerLinkedList list4 = new IntegerLinkedList();
+        list4.insertSorted(three);
+        list4.printList();
+        list4.insertSorted(two);
+        list4.printList();
+        list4.insertSorted(one);
+        list4.printList();
+        list4.insertSorted(four);
+        list4.printList();
+
+
     }
     public static void printList(LinkedList<Employee> list) {
         Iterator<Employee> iterate = list.iterator();

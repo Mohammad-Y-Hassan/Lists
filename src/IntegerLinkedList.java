@@ -13,7 +13,6 @@ public class IntegerLinkedList {
             if (isEmpty()) {
                 return null;
             }
-            C:\Users\mohas\OneDrive\Documents\Java Programs\Data Structure Certificate\ListsC:\Users\mohas\OneDrive\Documents\Java Programs\Data Structure Certificate\Lists
             IntegerNode removedNode = head;
             head = head.getNext();
             size--;
@@ -22,7 +21,22 @@ public class IntegerLinkedList {
         }
 
         public void insertSorted(Integer value) {
-            
+            if (head == null || head.getValue() > value) {
+                addToFront(value);
+                return;
+            }
+
+            IntegerNode current = head.getNext();
+            IntegerNode previous = head;
+            while (current != null && current.getValue() < value) {
+                previous = current;
+                current = current.getNext();
+            }
+
+            IntegerNode newNode = new IntegerNode(value);
+            newNode.setNext(current);
+            previous.setNext(newNode);
+            size++;
         }
 
         public int getSize() {
